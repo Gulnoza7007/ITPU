@@ -1,0 +1,187 @@
+.application{
+  
+    &_body{
+        display: flex;
+        justify-content: space-between;
+        background-color: $nea;
+        border-radius: 100px;
+
+        @include media(980){
+            flex-direction: column;
+        }
+
+        @include media(700){
+            border-radius: 64px;
+        }
+
+    }
+    &_image{
+        width: 55%;
+        position: relative;
+        overflow: hidden;
+        margin-top: 30px;
+
+        &_main{
+            position: absolute;
+            width: 90%;
+            height: 85%;
+            bottom: 0;
+            left: 56px;
+            overflow: hidden;
+            z-index: 2;
+            & img{
+                width: 100%;
+                height: 150%;
+            }
+        }
+
+        &_top{
+            position: absolute;
+            left: 0;
+            top: 0;
+
+            & img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        &_bottom{
+            position: absolute;
+            bottom: -40px;
+            right: 0;
+            z-index: 2;
+            width: 30%;
+            height: 40%;
+            & img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        
+        @include media(1100){
+            &_main{
+                width: 88%;
+                height: 85%;
+                & img{
+                    height: 130%;
+                }
+            }
+
+            &_top{
+                img{
+                    width: 80%;
+                    height: 80%;
+                    object-fit: contain;
+                }
+            }
+        }
+
+        @include media(980){
+            width: 100%;
+            @include adaptive-value("height", 1100, 288, 0);
+
+            &_main{
+                width: 80%;
+                height: 90%;
+                bottom: 0;
+                & img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            &_top{
+                & img{
+                    width: 70%;
+                    height: 70%;
+                }
+            }
+
+            &_bottom{
+                bottom: 20%;
+                right: 40px;
+            }
+        }
+
+        @include media(650){
+            margin-top: 0;
+            &_top img{
+                width: 58%;
+                height: 58%;
+            }
+            &_bottom{
+                bottom: 18%;
+                right: 20px;
+            }
+        }
+
+        @include media(460){
+            &_main{
+                left: 35px;
+            }
+            &_top img{
+                width: 50%;
+                height: 50%;
+                top: 0;
+            }
+            &_bottom{
+                bottom: 16%;
+                right: 20px;
+            }
+        }
+    }
+
+    &_block{
+        width: 45%;
+        padding: 56px;
+
+        @include media(980){
+            width: 100%;
+        }
+
+        @include media(570){
+            padding: 24px;
+        }
+
+    }
+    &_title{
+        font-weight: 400;
+        line-height: 135%; 
+        @include adaptive-value("font-size", 39, 31, 1);
+
+        @include media(670){
+            font-weight: 600;
+        }
+    }
+    &_subtitle{
+        color: $black-50;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        margin: 12px 0px;
+    }
+    &_button{
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 24px;
+        background-color: $Primary-75;
+        padding: 24px 32px;
+        border-radius: 100px;
+        color: $wht;
+        text-align: center;
+        display: inline-block;
+        &:hover{
+            background-color: $Primary-50;
+        }
+    }
+    &_form{
+        &_input{
+            border: 0.5px solid #C6C5C5;
+            border-radius: 100px;
+            padding: 24px;
+            width: 100%;
+            margin-bottom: 12px;
+        }
+    }
+}

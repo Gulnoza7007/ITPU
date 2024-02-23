@@ -1,0 +1,189 @@
+
+.header{
+    position: relative;
+
+    &__container{
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+
+    @include adaptive-value("height", 105, 66, 1);
+
+}
+
+.navbar{
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+
+    @include adaptive-value("height", 105, 66, 1);
+    
+    @include media(919) {
+        transition: all .3s ease-in-out;
+    }
+}
+
+.open, .close, .navbar_courses{ 
+    display: none;
+    cursor: pointer;
+}
+
+.nav_logo{
+    width: 190px;
+    height:64px;
+    cursor: pointer;
+
+    @include adaptive-value("width", 190, 126, 1);
+    @include adaptive-value("height", 64, 42, 1);
+   
+    & img{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+    width: 73%;
+
+    &_list{
+        padding: 15px 20px;
+        border-radius: $br;
+        color: $black-75;
+        font-family: $opf;
+        
+        @include adaptive-value("font-size", 20, 16, 1);
+        
+        &:hover{
+            transition: all 0.3s ease-in-out;
+            background-color: $Primary-75;
+            color: $wht;
+        }
+    }
+}
+
+.phone{
+    display: flex;
+    flex-direction: row;
+
+    &_icon{
+        margin-right: 8px;
+    }
+
+    &_number a{
+        color: $black-75;
+        @include adaptive-value("font-size", 20, 16, 1);
+    }
+}
+
+@include media(1005){
+    .menu{
+        width: 70%;
+        &_list{
+            padding: 10px 12px;
+        }
+    }
+
+    .navbar{
+        width: 78%;
+        z-index: 3;
+    }
+
+    .phone_icon{
+        margin-right: 4px;
+    }
+
+}
+
+@include media(920){
+    nav{
+        overflow: hidden;
+    }
+
+    .open{
+        display: block;
+        background-color: $wht;
+
+    }
+
+    .navbar{
+        z-index: 2;
+        flex-direction: column;
+        background-color: $wht;
+        right: -100%;
+        height: 100vh;
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        top: 0;
+
+        &_courses{
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 60px;
+            margin-bottom: 40px;
+            & :not(:last-child){
+                margin-bottom: 45px;
+            }
+
+            &_link{
+                padding: 15px 30px;
+                background-color: $nea2;
+                border-radius: $br;
+                font-family: $opf;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 19px;
+                color: $black-75;            
+            }
+        }  
+
+        @include adaptive-value("padding", 120, 16, 40);
+       
+        &.displayMenu{
+            display: flex;
+            right: 0;
+            width: 100%;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    .menu{
+        flex-direction: column;
+        width: 100%;
+        margin-top: 66px;
+        & :not(:last-child){
+            margin-bottom: 54px;
+        }
+        &_list{
+            padding: 15px 20px;
+        }
+    }
+
+    .phone{
+        width: 100%;
+    } 
+    
+    .close{
+        position: absolute;
+        @include adaptive-value("margin-top", -40, 10, 1);
+        @include adaptive-value("right", 154, 16, 40);
+
+        &.displayButton{
+            display: block;
+
+        }
+    }
+}

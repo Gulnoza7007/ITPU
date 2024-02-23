@@ -1,0 +1,14 @@
+.application_check{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #FF0000;
+    height: 0;
+    overflow: hidden;
+
+    &.error{
+        height: 20px;
+    }
+}
+
+

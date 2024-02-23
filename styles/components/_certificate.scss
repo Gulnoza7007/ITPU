@@ -1,0 +1,187 @@
+.certificate{
+    &__container{
+        @include adaptive-value("margin-top", 84, 16, 20);
+    }
+    &_body{
+        display: flex;
+        justify-content: space-between;
+        background-color: $nea;
+
+        @include adaptive-value("padding", 56, 24,1);
+        @include adaptive-value("border-radius", 100, 64,1);
+
+
+        @include media(1024){
+            flex-direction: column;
+        }
+
+    }
+    &_image{
+        width: 52%;
+        height: 100%;
+        & img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+
+            @include adaptive-value("border-radius", 64,48,1)
+
+        }
+        @include media(1024){
+            width: 100%;
+            
+        }
+
+    }
+    &_content{
+        width: 40%;
+        @include media(1024){
+            width: 100%;
+            margin-top: 32px;
+        }
+        
+    }
+    &_check{
+        width: 100%;
+        visibility: visible;
+
+        &.checked{
+            display: none;
+            visibility: hidden;
+            overflow: hidden;
+            height: 0;
+        }
+    }
+    &_title{
+        font-weight: 600;  
+        line-height: 135%;
+        color: $black-100;
+        margin-bottom: 12px;
+
+        @include adaptive-value("font-size", 39,30,1);
+    }
+    &_subtitle{
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 26px;
+        color: $black-75;
+    }
+    &_input{
+        background: #FAFAFD;
+        border: 0.5px solid #C6C5C5;
+        border-radius: 100px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+        color: $black-75;
+        padding: 24px 25px;
+        margin: 32px 0px 20px 0px;
+        width: 100%;
+
+        @include media(470){
+            margin-top: 18px;
+        }
+
+    }
+    &_button{
+        width: 100%;
+        background-color: $Primary-75;
+        padding: 24px 32px;
+        border-radius: 100px;
+        color: $wht;
+        text-align: center;
+        display: inline-block;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 22px;
+        &:hover{
+            background-color: $Primary-50;
+        }
+    }
+    &_text{
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 21px;
+        color: red;
+        height: 0;
+        visibility: hidden;
+
+        &.wrong{
+          visibility: visible;
+          margin-top: 16px;
+        }
+    }
+}
+
+.certificate_confirmed{
+    text-align: center;
+    width: 100%;
+
+    @include media(1024){
+        margin-top: 32px;
+    }
+    
+    height: 0;
+    overflow: hidden;
+
+    &.real{
+        height: auto;
+    }
+
+    &_icon{
+        margin-bottom: 24px;
+        & img{
+            @include adaptive-value("width", 144, 95, 1);
+            @include adaptive-value("height", 144, 95, 1);
+        }
+    }
+    
+    &_title{
+        font-weight: 600;
+        font-size: 31px;
+        line-height: 42px;
+    }
+
+    &_subtitle{
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+        columns: $black-75;
+        margin-top: 10px;
+        margin-bottom: 24px;
+    }
+
+    &_button{
+        background-color: $Primary-75;
+        padding: 24px 32px;
+        border-radius: 100px;
+        color: $wht;
+        text-align: center;
+        display: inline-block;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 22px;
+        &:hover{
+            background-color: $Primary-50;
+        }
+
+        & span svg{
+            margin-left: 15px;
+        }
+    }
+
+    &_check{
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+        color: $black-50;
+        margin-top: 14px;
+        background-color: $nea;
+
+        & span svg{
+           margin-left: 8px;
+           fill: $black-50;
+           transform: rotate(270deg);
+        }
+    }
+}

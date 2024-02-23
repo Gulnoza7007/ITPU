@@ -1,0 +1,75 @@
+.programming_courses{
+    &__container{
+        position: relative;
+    }
+    &_swiper{
+        width: 100%;
+        height: 100%;
+        border-radius: 100px;
+        z-index: -1;
+        background: rgba(28, 25, 23, 0.56);
+
+        @include media(570){
+            border-radius: 64px;
+            max-height: 548px;
+        }
+
+    }
+    &_body{
+        position: absolute;
+        top: 0;
+        z-index: 3;
+        background: rgba(28, 25, 23, 0.56);
+        color: $wht;
+        height: 100%;
+        border-radius: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+
+        @include adaptive-value("padding", 56, 32,1);
+
+        @include media(570){
+            border-radius: 64px;
+            max-height: 548px;
+        }
+        
+    }
+
+    &_header{
+        max-width: 550px;
+    }
+
+    &_title{
+        font-weight: 600;
+        line-height: 135%;
+        margin-bottom: 24px;
+
+        @include adaptive-value("font-size", 49,23,1);
+    }
+
+    &_subtitle{
+        font-weight: 400;
+        line-height: 135%;
+        @include adaptive-value("font-size", 25,20, 1);
+
+    }
+    &_bottom{
+        width: 100%;
+        line-height: 135%;
+        font-weight: 600;
+        @include adaptive-value("font-size", 16,14, 1);
+
+    }
+    &_image{
+        width: 100%;
+        height: 562px;
+        
+        & img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}

@@ -1,0 +1,28 @@
+//Default
+@import "./global/normalize";
+@import "./global/variables";
+
+
+//MIXIN
+@import "./mixins/mixins";
+@import "./mixins/mini-mixin";
+@import "./mixins/media-mixins";
+
+//Global
+@import "./global/setting";
+
+@import "./components/header";
+@import "./components/about";
+@import "./components/advantages";
+@import "./components/courses";
+@import "./components/programming-courses";
+@import "./components/check";
+@import "./components/certificate";
+@import "./components/itpu";
+@import "./components/map";
+@import "./components/application";
+@import "./components/application_inputs";
+@import "./components/footer";
+
+
+

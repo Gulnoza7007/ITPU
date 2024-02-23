@@ -1,0 +1,324 @@
+.courses{
+    &__container{
+        display: flex;
+        position: relative;
+
+        @include media(1000){
+            flex-direction: column;
+        }
+    }
+
+    &_body{
+        display: flex;
+        flex-direction: column;
+        width: 65%;
+        color: $wht;
+
+        @include media(1000){
+            width: 90%;
+            margin: auto;
+        }
+
+        @include media(750){
+            width: 100%;
+        }
+    }
+
+    &_names{
+        width: 35%;
+        position: sticky;
+        height: 100%;
+        top: 30px;
+
+        
+        &_header{
+            font-weight: 600;
+            font-size: 49px;
+            line-height: 67px;
+            margin-bottom: 48px;
+        }
+        
+        &_menu{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        @include media(1000){
+            width: 100%;
+            position: static;
+        
+            &_menu{
+                display: none;       
+            }
+            
+        }
+    }
+    &_links{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        & :not(:last-child){
+            margin-bottom: 24px;
+        }
+        @include media(1000){
+            flex-direction: row;
+        }
+
+    }
+    &_list{
+        padding: 16px 32px;
+        font-family: 'Open Sans';
+        color: $black-75;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 34px;
+        background-color: $nea;
+        border-radius: 100px;
+        transition: all 0.5s ease-in-out;
+
+        &.active,
+        &:hover{
+            background-color: $black-100;
+            color: $wht;
+        }
+
+        &_more{
+             padding: 16px 24px;
+            font-family: 'Open Sans';
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 27px;
+            color: $black-50;
+            background-color: $nea2;
+            border-radius: 100px;
+            margin: 24px 0px;
+        }
+    }
+
+    &_block{
+        display: block;
+        flex-direction: column;
+        background-color: $Primary-75;
+        border-radius: $br;
+        margin-bottom: 32px;
+        @include media(570){
+            border-radius: 50px;
+        }
+    }
+
+    &_header{
+        font-weight: 600;
+        line-height: 135%;
+        padding: 56px 56px 0px 56px;
+        margin-bottom: 0;
+
+        @include media(750){
+            padding: 32px 20px 0px 32px;
+        }
+
+        @include adaptive-value("font-size", 31, 25,1);
+    }
+
+    &_content{
+        display: flex;
+        padding: 24px 0px 0px 56px;
+        justify-content: space-between;
+
+        @include media(750){
+            padding: 16px 0px 0px 32px;
+        }
+
+        @include media(570){
+            flex-direction: column;
+        }
+    }
+
+    &_smth{
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @include media(570){
+            width: 100%;
+        }
+    }
+
+    &_image{
+        width: 50%;
+        height: 50%;
+        padding-top: 56px;
+
+        & img{
+            width: 100%;
+            height: 100%;
+            border-radius: 0px 0px 100px 0px;
+
+        }
+
+        @include media(570){
+            width: 90%;
+            margin-left: 10%;
+            padding-top: 0;
+            
+            & img{
+                border-radius: 0px 0px 50px 0px;
+            }
+        }
+    }
+
+    &_text{
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 27px;
+    }
+
+    &_button{
+        @include media(570){
+            padding-top: 40px;
+        }
+        & button{
+            padding: 24px 32px;
+            background-color: $wht;
+            border-radius: $br;
+            margin-bottom: 56px;
+            display: flex;
+            max-width: 240px;
+            font-weight: 600;
+            font-size: 20px;
+            font-family: $opf;
+            color: $black-75;
+            transition: all 0.3s ease-in-out;
+
+            &:hover{
+                background-color: $nea2;
+
+            }
+
+            & span{
+                margin-left: 8px;
+            }
+            
+            @include media(1057){
+                padding: 20px 24px;
+            }
+
+            @include media(750){
+                margin-bottom: 32px;
+                padding: 20px 17px;
+
+            }
+        }
+    }
+    &_icon{
+        & svg{
+            margin-left: 10px;
+            margin-top: 4px;
+            &.rotate{
+            transform: rotate(180deg);
+            }
+        }
+    }
+}
+
+.purple{
+    background-color: #7F71B1;
+}
+
+.blue{
+    background-color: #2DCACC;
+
+    &_content{
+        padding: 24px 56px 0px 0px;
+
+        @include media(750){
+            padding: 16px 32px 0px 0px;
+        }
+
+        @include media(570){
+            flex-direction: column-reverse;
+            & .courses_smth{
+            padding: 16px 0px 0px 32px;
+
+            }
+        }
+    }
+
+    &_image{
+        & img{
+            border-radius: 0px 0px 0px 100px;
+            margin-bottom: 0px;
+
+            @include media(570){
+                margin-right: 10%;
+                margin-left: -11%;
+                border-radius: 0px 0px 0px 50px;
+            }
+        }
+    }
+}
+
+
+
+.courses_links_more{
+    max-height: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    visibility: hidden;
+    
+    & :not(:last-child){
+        margin-bottom: 24px;
+    }
+    
+    &.open{
+        margin-top: 24px;
+        margin-bottom: 24px;
+        visibility: visible;
+        
+    }
+    
+}
+
+.courses_body_additional{
+    max-height: 0px;
+    visibility: hidden;
+
+    &.openn{
+        visibility: visible;
+        margin-bottom: 50px;
+    }
+}
+@include mediaMobileFirst(1000){
+    .mySwiper{
+        display: none;
+    }
+}
+
+
+
+.mySwiper{
+    margin-bottom: 32px;
+    width: 850px;
+
+    & .swiper-slide{
+        padding: 14px 0px;
+        width: auto;
+        &-active{
+            width: auto;
+        }
+        & a{
+            border-radius: 100px;
+            background-color: $nea;
+            color: black;
+            padding: 12px 24px;
+            font-size: 12px;
+            line-height: 16px;
+           &:hover{
+            background-color: $black-100;
+            color: $wht;
+           }
+        }
+    }
+}

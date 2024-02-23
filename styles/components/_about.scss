@@ -1,0 +1,203 @@
+.about{
+    &__container{
+         @include adaptive-value("margin-top", 64, 16, 20);
+    }
+
+    &_body{
+        display: flex;
+        justify-content: space-between;
+        @include media(840){
+            flex-direction: column;
+        }
+    }
+
+    &_header{
+        width: 50%;
+        margin-top: 30px;
+
+        @include media(1100){
+            margin-top: 0px;
+        }
+
+        @include media(840){
+            width: 100%;
+        }
+    }
+
+    &_title{
+        font-weight: 600;
+        line-height: 135%;
+        @include adaptive-value("font-size", 61, 37, 1);
+        @include media(980){
+            font-size: 42px;
+        @include adaptive-value("font-size", 50, 37, 1)
+
+        }
+    }
+
+    &_subtitle{
+        font-weight: 400;
+        line-height: 136%;
+        color: #8D8C8B;
+         
+        @include adaptive-value("margin-top", 24, 16, 1);
+        @include adaptive-value("font-size", 25, 20, 1);
+
+    }
+
+    &_image{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+        & img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &_button_block{
+        display: flex;
+        margin-top: 40px;
+        justify-content: space-between;
+
+        @include media(920){
+            margin-top: 32px;
+        }
+
+        @include media(840){
+            flex-direction: column;
+        }
+    }
+
+    &_button{
+        display: flex;
+        background-color: $black-100;
+        border-radius: $br;
+        padding: 24px 32px;
+        max-height: 75px;
+        font-weight: 600;
+        font-size: 20px;
+        color: $wht;
+        border: none;
+        font-family: $opf;
+        align-items: center;
+        border: 1px solid #555351;
+        max-width: 237px;
+
+        & svg{
+            margin-left: 12px;
+            fill: $wht;
+        }
+
+        &:hover{
+            background-color: $wht;
+            color: $black-75;
+            transition: all 0.3s ease-in-out;
+
+            & svg{
+                fill: black;
+            }
+        }
+    }
+
+    &_link_block{
+        display: flex;
+        flex-wrap: wrap;
+        width: 50%;
+        margin-right: -20px;
+
+        & a{
+            font-family: 'Open Sans';
+            font-weight: 400;
+            line-height: 131%;
+            color: $black-100;
+            padding: 16px 32px;
+            background-color: $nea;
+            border-radius: $br;
+            margin: 0px 16px 16px 0px;
+
+            @include adaptive-value("font-size", 16, 12,1)
+        }
+
+        @include media(920){
+            width: 53%;
+
+            & a{
+                padding: 12px 24px;
+                margin: 0px 10px 10px 0px;
+            }
+        }
+
+        @include media(840){
+            width: 100%;
+            margin-top: 32px;
+        }
+    }
+
+    &_swiper{
+        position: relative;
+        width: 50%;
+        margin: 0;
+        padding: 0px;
+
+        @include media(840){
+            width: 100%;
+            margin-top: 32px;
+        }
+
+        &_top{
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+
+            @include media(1200){
+                top: -10px;
+                left: -10px;
+            }
+
+            @include media(1050){
+                & svg{
+                    width: 100px;
+                    height: 100px;
+                }
+            }
+
+            @include media(840){
+                & svg{
+                    @include adaptive-value("width",200,76,1);
+                    @include adaptive-value("height",200,69,1);
+                }
+            }
+        }
+
+        &_bottom{
+            position: absolute;
+            right: -40px;
+            bottom: 0px;
+            z-index: 1;
+            overflow: hidden;
+
+            @include adaptive-value("width", 230, 50,1);
+            
+            & img{
+                width: 120%;
+                height: 100%;
+            }
+            @include media(840){
+                @include adaptive-value("width", 400, 100,1);
+                bottom: -10px;
+            }
+        }
+    }
+}
+
+
+.swiper{
+    &-pagination-bullet{
+        width: 50px;
+    }
+    
+}
+

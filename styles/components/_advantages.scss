@@ -1,0 +1,106 @@
+.advantages{
+    color: $black-100;
+
+    &_header{
+        line-height: 135%;
+        font-weight: 600;
+
+        @include adaptive-value("margin-bottom", 48, 28,1);
+        @include adaptive-value("font-size", 39, 35, 1);
+    }
+
+    &_body{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        
+        @include media(1024){
+            & :not(:last-child){
+                margin-bottom: 30px;
+            }
+        }
+    }
+
+    &_block{
+        display: flex;
+        flex-direction: column;
+        background-color: $nea;
+        border-radius: $br;
+        padding: 0px 0px 40px 40px;
+        width: 32%;
+
+        & :not(:last-child){
+            margin-bottom: 12px;
+        }
+
+        @include media(1024){
+            width: 47%;
+        }
+
+        @include media(700){
+            width: 80%;
+            margin: auto;
+        }
+
+        @include media(540){
+            width: 100%;
+            border-radius: 64px;
+        }
+
+    }
+
+    &_content{
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    &_image{
+        width:62%;
+        height: 62%;
+
+        & img{
+            border-radius: 0px 100px 0px 0px;
+            width: 100%;
+            @include media(540){
+                border-radius: 0px 64px 0px 0px;
+            }
+        }
+    }
+
+    &_number{
+        width: 40%;
+        padding-top: 40px;
+        font-weight: 600;
+        font-size: 49px;
+        line-height: 67px;
+    }
+
+    &_text{
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 34px;
+    }
+
+    &_subtext{
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 27px; 
+        color: $black-75;
+        max-width: 80%;
+    }
+}
+
+.second{
+    padding: 40px 0px 00px 40px;
+    &_image{
+        width: 62%;
+        height: 62%;
+
+        & img{
+            border-radius: 0px 0px 100px 0px;
+            @include media(540){
+                border-radius: 0px 0px 64px 0px;
+            }
+        }
+    }
+}

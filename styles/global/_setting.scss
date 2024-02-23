@@ -1,0 +1,50 @@
+
+body{
+    display: flex;
+    flex-direction: column;
+    font-family: $opf;
+    height: auto;
+    color: $black-100;
+    &.active{
+        overflow: hidden;
+        height: 100vh;
+    }
+}
+
+
+.wrapper{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    contain: paint;
+}
+
+[class*="__container"] {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0;
+
+    @include adaptive-value("padding-left", 154, 16, 40);
+    @include adaptive-value("padding-right", 154, 16, 40);
+    @include adaptive-value("margin-top", 96, 48, 1);
+    @include adaptive-value("margin-bottom", 96, 48, 1);
+}
+
+.swiper-pagination span{
+    width: 51px;
+    height: 3px;
+    border-radius: 3px;
+    background-color: rgb(247, 240, 231);
+    & :not(:last-child){
+        margin-right: 18px;
+    }
+}
+
+.swiper-pagination-bullet-active{
+    background-color: $wht !important;
+}
+
+button{
+    cursor: pointer;
+}

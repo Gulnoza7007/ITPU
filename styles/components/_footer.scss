@@ -1,0 +1,137 @@
+footer{
+    background-color: $Primary-75;
+    margin-top: -200px;
+    z-index: -5;
+    border-radius: 100px 100px 0px 0px;
+}
+
+.footer{
+    &___container{
+        margin-bottom: 0px;
+    }
+    &_body{
+        display: flex;
+        flex-direction: column;
+    }
+    &_top{
+        display: flex;
+        justify-content: space-between;
+        padding:100px 0px 56px 0px;
+
+        @include media(680){
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding-bottom: 32px;
+        }
+
+
+    }
+    &_info{
+        display: flex;
+        justify-content: space-between;
+        width: 60%;
+        
+        @include media(1040){
+            width: 70%;
+        }
+        @include media(680){
+            flex-direction: column;
+        }
+
+    }
+    &_logo{
+        width: 190px;
+        height:64px;
+
+        cursor: pointer;
+
+        @include adaptive-value("width", 190, 126, 1);
+        @include adaptive-value("height", 64, 42, 1);
+   
+        & img{
+           width: 100%;
+           height: 100%;
+        }
+
+        @include media(620){
+            margin-top: 32px;
+        }
+    }
+    &_text20{
+        font-weight: 400;
+        line-height: 135%;
+        color: $wht;
+        margin-bottom: 12px;
+        font-family: $opf;
+
+        @include adaptive-value("font-size", 20,12,1);
+
+        @include media(680){
+            margin-top: 32px;
+            font-size: 20px;
+        }
+
+
+    }
+    &_text16{
+        font-family: $opf;
+        font-weight: 400;
+        line-height: 135%;
+        color: #FFFFFF;
+
+        @include adaptive-value("font-size", 16,10,1);
+
+        @include media(680){
+            font-size: 16px;
+        }
+    }
+    &_socials{
+        &_icons{
+            display: flex;
+            & img{
+                @include adaptive-value("width", 36,20,1);
+                @include adaptive-value("height", 36,20,1);
+            }
+
+
+            & :not(:last-child){
+                margin-right: 12px;
+            }
+
+            @include media(680){
+                width: 180px;
+                margin: auto;
+                & img{
+                    width: 36px;
+                    height: 36px;
+                }
+            }
+        }
+    }
+    &_bottom{
+        margin: 16px 0px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include media(550){
+            flex-direction: column;
+            margin: 32px 0px;
+            text-align: center;
+        }
+
+    }
+    &_appx{
+        cursor: pointer;
+
+        @include media(550){
+            margin-top: 24px;
+        }
+    }
+}
+
+hr{
+    border: 1px solid #FFFFFF;
+}
+

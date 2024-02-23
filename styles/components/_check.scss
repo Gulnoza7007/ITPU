@@ -1,0 +1,119 @@
+.check{
+    &_header{
+        font-weight: 600;
+        font-size: 49px;
+        line-height: 135%; 
+        
+        @include adaptive-value("margin-bottom", 48, 24, 1);
+        @include adaptive-value("font-size", 49, 28, 1)
+
+    }
+
+    &_body{
+        display: flex;
+        justify-content: space-between;
+        padding: 56px;
+        background-color: $nea;
+        border-radius: $br;
+
+        @include media(925){
+            flex-direction: column-reverse;
+        }
+
+        @include media(650){
+            padding: 34px;
+            border-radius: 64px;
+        }
+
+        @include media(450){
+            padding: 24px;
+        }
+
+    }
+
+    &_title{
+        font-weight: 600;
+        line-height: 135%;
+        color: $black-75;
+        margin-bottom: 16px;
+
+        @include adaptive-value("font-size", 31,25,1);
+    }
+
+    &_subtitle{
+        font-weight: 400;
+        color: $black-75;
+        line-height: 135%;
+        margin-bottom: 58px;
+
+        @include adaptive-value("font-size", 25,20,1);
+
+
+    }
+
+    &_button a{
+        display: flex;
+        font-size: 20px;
+        font-weight: 600;
+        align-items: center;
+        font-family: $opf;
+        color: $wht;
+        background-color: $black-100;
+        padding: 24px 32px;
+        border-radius: 100px;
+        max-width: 200px;
+        border: 1px solid #555351;
+        
+        & span{
+            display: block;
+            margin-left: 12px;
+            & svg{
+                fill: $wht;
+            }
+        }
+        &:hover{
+            background-color: $wht;
+            color: $black-100;
+            transition: all 0.3s ease-in-out;
+
+            & span svg{
+                fill: black;
+            }
+        }
+         
+        @include media(925){
+            margin-top: 32px;
+        }
+
+    }
+
+    &_block{
+        display: flex;
+        width: 50%;
+        flex-direction: column;
+
+        @include media(925){
+            width: 100%;
+            margin-top: 32px;
+        }
+    }
+
+    &_image{
+        width: 45%;
+        height: auto;
+        & img{
+            border-radius: 50px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        @include media(925){
+            width: 100%;
+           height: auto;
+
+        & img{
+            min-height: 201px;
+           }
+        }
+    }
+}
